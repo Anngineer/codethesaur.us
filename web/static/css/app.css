@@ -145,3 +145,15 @@ textarea {
   overflow-wrap: normal;
   overflow-x: scroll;
 }
+
+@media (max-width: 559px) {
+  .concept-title-cards {
+    display: none;
+  }
+}
+
+@media (min-width: 558px) {
+  .compare-title-small-width {
+    display: none;
+  }
+}
