@@ -20,7 +20,7 @@
 {% for category in categories %}
            <div class="row">&nbsp;</div>
            <div class="row"><h2>{{ category.id }}</h2></div>
-           <div class="card-group">
+           <div class="card-group concept-title-cards">
                 <div class="card">
                     <div class="card-body">
                         <h3 class="text-center">Concept</h3>
@@ -40,14 +40,28 @@
 
     {% for concept in category.concepts %}
         <div class="card-group">
-            <div class="card">
+            <div class="card compare-title-small-width">
                 <div class="card-body">
                     <div class="strong">
                         {{ concept.name|default:"Unsupported or Not Needed"|linebreaksbr }}
                     </div>
                 </div>
             </div>
+            <div class="card">
+                <div class="card-body">
+                  <div class="strong">
+                    {{ lang1_friendlyname|linebreaksbr }}'s Implementation:
+                  </div>
+                </div>
+              </div>
             {% concept_card concept.code1 concept.comment1 %}
+            <div class="card compare-title-small-width">
+                <div class="card-body">
+                  <div class="strong">
+                    {{ lang2_friendlyname|linebreaksbr }}'s Implementation:
+                  </div>
+                </div>
+              </div>
             {% concept_card concept.code2 concept.comment2 %}
         </div>
     {% endfor %}
